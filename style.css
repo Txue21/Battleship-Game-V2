@@ -1,0 +1,95 @@
+/* style.css */
+:root {
+    --cell-size: 40px;
+    --hit-color: #ef4444;
+    --miss-color: #3b82f6;
+    --ship-color: #4b5563;
+    --empty-color: #ffffff;
+    --border-color: #d1d5db;
+    --bg-color: #f3f4f6;
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-color: var(--bg-color);
+    color: #1f2937;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+h1 { margin-bottom: 0.5rem; }
+
+#status-area {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+    width: 100%;
+    max-width: 850px;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+#game-container {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.board-wrapper h3 {
+    text-align: center;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 0.9rem;
+    color: #6b7280;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(10, var(--cell-size));
+    grid-template-rows: repeat(10, var(--cell-size));
+    gap: 2px;
+    background-color: var(--border-color);
+    border: 3px solid #374151;
+    border-radius: 4px;
+}
+
+.cell {
+    width: var(--cell-size);
+    height: var(--cell-size);
+    background-color: var(--empty-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-weight: bold;
+    user-select: none;
+}
+
+/* Cell States */
+.cell.ship { background-color: var(--ship-color); }
+.cell.hit { background-color: var(--hit-color); color: white; }
+.cell.hit::before { content: "✕"; }
+.cell.miss { background-color: var(--miss-color); opacity: 0.7; }
+.cell.miss::before { content: "○"; color: white; }
+
+/* Turn Indicator */
+.my-turn { border-color: #10b981 !important; box-shadow: 0 0 15px rgba(16, 185, 129, 0.4); }
+
+.controls { margin-top: 30px; }
+button {
+    background: #1f2937;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.1s;
+}
+button:hover { background: #111827; transform: translateY(-1px); }
+button:active { transform: translateY(0); }
