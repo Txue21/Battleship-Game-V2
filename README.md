@@ -13,3 +13,5 @@ Implemented an advanced computer opponent that uses a `target_queue` to remember
 * **Automatic Deployment:** Both the player and computer fleets are automatically placed by the server at the start of the game. Manual ship placement is not currently available.
 * **Single Player Only:** The application only supports one player against the computer AI.
 * **Fixed Grid Size:** The game board is hard-coded to a standard 10x10 grid.
+
+Loom Video Link:https://www.loom.com/share/6205cda8881e49f5b7d8196cddd6c247
